@@ -1,0 +1,48 @@
+type Postcode {
+    postcode: String
+    quality: Int
+    eastings: Int
+    northings: Int
+    country: String
+    nhsHa: String
+    dateOfIntroduction: String
+    longitude: Float
+    latitude: Float
+    europeanElectoralRegion: String
+    primaryCareTrust: String
+    region: String
+    lsoa: String
+    msoa: String
+    incode: String
+    outcode: String
+    parliamentaryConstituency: String
+    adminDistrict: String
+    parish: String
+    adminCounty: String
+    adminWard: String
+    ced: String
+    ccg: String
+    nutsl: String
+    pfa: String
+    codes: PostcodeCodes
+}
+
+type PostcodeCodes {
+    adminDistrict: String
+    adminCounty: String
+    adminWard: String
+    parish: String
+    parliamentaryConstituency: String
+    ccg: String
+    ccgId: String
+    ced: String
+    nuts: String
+    lsoa: String
+    msoa: String
+    lau2: String
+    pfa: String
+}
+
+type Query {
+    postcode(postcode: String!) : Postcode
+}
