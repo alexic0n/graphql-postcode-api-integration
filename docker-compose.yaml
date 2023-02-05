@@ -2,6 +2,8 @@ version: "3.8"
 services:
   graphql-postcode-api:
     image: graphql-postcode-api-integration:latest
+    networks:
+      - default
     ports:
       - "6820:8080"
       - "6821:6666"
@@ -17,6 +19,8 @@ services:
       - mongodb-postcode-api
   mongodb-postcode-api:
     image: mongo:latest
+    networks:
+      - default
     container_name: graphql-postcodes-mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: username

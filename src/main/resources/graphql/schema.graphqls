@@ -44,5 +44,6 @@ type PostcodeCodes {
 }
 
 type Query {
-    postcode(postcode: String!) : Postcode
+    postcode(postcode: String!): Postcode
+    postcodes: [Postcode]
 }

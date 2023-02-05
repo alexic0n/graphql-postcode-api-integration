@@ -1,12 +1,19 @@
 package com.example.graphqlpostcodeapiintegration.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode
+@Document(value="postcodes")
 public class Postcode {
 
+    @Id
     private final String postcode;
     private final Integer quality;
     private final Integer eastings;
