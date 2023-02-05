@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  graphql-postcode-api:
+    image: graphql-postcode-api-integration:latest
+    ports:
+      - "6820:8080"
+      - "6821:6666"
+    entrypoint: [
+      "java",
+      "-agentlib:jdwp=transport=dt_socket,server=y,address=*:6666,suspend=n",
+      "-DmongoUsername=username",
+      "-DmongoPassword=password",
+      "-jar",
+      "graphql-postcode-api.jar"
+    ]
+    depends_on:
+      - mongodb-postcode-api
+  mongodb-postcode-api:
+    image: mongo:latest
+    container_name: graphql-postcodes-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: username
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./tmp/mongodb:/data/db
+    restart: always
+    ports:
+      - 6822:27017

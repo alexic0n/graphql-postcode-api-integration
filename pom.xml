@@ -10,12 +10,14 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>graphql-postcode-api-integration</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
 	<name>graphql-postcode-api-integration</name>
 	<description>Brief project to integrate graphql layer over Postcodes rest api</description>
 	<properties>
 		<java.version>19</java.version>
+		<mongo.username>${mongoUsername}</mongo.username>
+		<mongo.password>${mongoPassword}</mongo.password>
 	</properties>
 	<dependencies>
 		<!-- <dependency>
@@ -68,6 +70,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<final-name>graphql-postcode-api-integration</final-name>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

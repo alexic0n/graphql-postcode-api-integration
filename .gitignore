@@ -4,7 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-./.vscode
+.vscode/
+tmp/*
 
 ### STS ###
 .apt_generated
